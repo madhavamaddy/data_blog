@@ -1,0 +1,25 @@
+<form method="POST">
+  {% csrf_token %}
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title"><br><br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email"><br><br>
+  {% if error %}
+    <p id="error-message" style="color:red;">{{ error }}</p>
+  {% endif %}
+
+  <label for="content">Content:</label><br>
+  <textarea id="content" name="content" rows="4" cols="50"></textarea><br><br>
+
+  <label for="Name">Author_name:</label>
+  <input type="text" id="name" name="name"><br><br>
+
+  <input type="submit" value="Create Post">
+</form>
+
+<script>
+    setTimeout(function() {
+      document.getElementById('error-message').style.display = 'none';
+    }, 2000); // 5000 milliseconds = 5 seconds
+  </script>
